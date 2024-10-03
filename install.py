@@ -66,7 +66,9 @@ with open("/mnt/usb/preseed.cfg", "w") as f:
 late_command = """
 in-target sed -i 's|^wallpaper=.*|wallpaper=/batarong.png|' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
 in-target cp /cdrom/neofetch.txt /root/.config/neofetch/config.conf
-in-target chmod 644 /root/.config/neofetch/config.conf
+in-target chmod 777 /root/.config/neofetch/config.conf
+in-target cp /cdrom/batarong /batarong
+in-target chmod 777 /batarong
 """
 
 with open("/mnt/usb/late_command.sh", "w") as f:
@@ -75,6 +77,7 @@ with open("/mnt/usb/late_command.sh", "w") as f:
 # Copy the custom Neofetch file and wallpaper to the USB drive
 subprocess.run(["cp", neofetch_file, "/mnt/usb/neofetch.txt"])
 subprocess.run(["cp", wallpaper_file, "/mnt/usb/batarong.png"])
+subprocess.run(["cp", "batarong", "/mnt/usb/batarong"])
 
 # Unmount the USB drive
 subprocess.run(["umount", "/mnt/usb"])
