@@ -40,22 +40,13 @@ subprocess.run(["mount", usb_device + "1", "/mnt/usb"])
 # Create a custom preseed file for auto-installation
 preseed_file = """
 d-i debian-installer/locale string en_US
-d-i console-setup/ask_detect boolean false
-d-i console-setup/layout string us
 d-i netcfg/choose_interface select auto
-d-i netcfg/disable_autoconfig boolean true
-d-i netcfg/get_ipaddress string 192.168.1.100
-d-i netcfg/get_netmask string 255.255.255.0
-d-i netcfg/get_gateway string 192.168.1.1
-d-i netcfg/get_nameservers string 8.8.8.8
-d-i netcfg/confirm_static boolean true
+d-i netcfg/disable_autoconfig boolean false
+d-i netcfg/confirm_static boolean false
 d-i mirror/country string manual
-d-i mirror/http/hostname string http.us.debian.org
 d-i mirror/http/directory string /debian
-d-i mirror/http/proxy string
 d-i pkgsel/install-language-support boolean false
 d-i tasksel/first multiselect xfce-desktop
-d-i grub-installer/bootdev  string /dev/sda
 d-i finish-install/reboot_required  boolean true
 """
 
