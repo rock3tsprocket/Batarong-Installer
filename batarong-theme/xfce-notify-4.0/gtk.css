@@ -1,0 +1,14 @@
+/* Yellow XFCE panel theme */
+
+/* Colors */
+@define-color panel_bg_color #ffffcc; /* Light yellow panel background */
+@define-color panel_fg_color #000000; /* Black panel text */
+
+/* Styles */
+.panel {
+  background-color: @panel_bg_color;
+}
+
+.panel label {
+  color: @panel_fg_color;
+}
