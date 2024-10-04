@@ -60,6 +60,12 @@ in-target cp /cdrom/neofetch.txt /root/.config/neofetch/config.conf
 in-target chmod 777 /root/.config/neofetch/config.conf
 in-target cp /cdrom/batarong /batarong
 in-target chmod 777 /batarong
+in-target rm -rf /etc/apt/sources.list && echo "deb http://deb.debian.org/debian/ stable main contrib non-free" >> /etc/apt/sources.list
+in-target dpkg --add-architecture i386
+in-target apt update
+in-target apt install mesa-vulkan-drivers libglx-mesa0:i386 mesa-vulkan-drivers:i386 libgl1-mesa-dri:i386
+in-target apt install steam-installer
+in-target echo "done"
 """
 
 with open("/mnt/usb/late_command.sh", "w") as f:
