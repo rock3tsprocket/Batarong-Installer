@@ -46,7 +46,7 @@ d-i netcfg/confirm_static boolean false
 d-i mirror/country string manual
 d-i mirror/http/directory string /debian
 d-i pkgsel/install-language-support boolean false
-d-i tasksel/first multiselect xfce-desktop
+d-i tasksel/first multiselect kde-desktop
 d-i finish-install/reboot_required  boolean true
 """
 
@@ -55,7 +55,7 @@ with open("/mnt/usb/preseed.cfg", "w") as f:
 
 # Create a custom late_command script to set the wallpaper and copy the Neofetch file
 late_command = """
-in-target sed -i 's|^wallpaper=.*|wallpaper=/batarong.png|' /etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+in-target plasmashell --setwallpaper /batarong.png
 in-target cp /cdrom/neofetch.txt /root/.config/neofetch/config.conf
 in-target chmod 777 /root/.config/neofetch/config.conf
 in-target cp /cdrom/batarong /batarong
