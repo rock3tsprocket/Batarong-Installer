@@ -25,10 +25,10 @@ usb_device = input("Enter device name (eg. /dev/sdx): ")
 debian_iso = "debian.iso"
 
 # Set the custom Neofetch file path
-neofetch_file = "neofetch.txt"
+neofetch_file = "inst-files/neofetch.txt"
 
 # Set the custom wallpaper file path
-wallpaper_file = "batarong.png"
+wallpaper_file = "inst-files/batarong.png"
 
 # Create a bootable USB drive
 subprocess.run(["dd", "if=" + debian_iso, "of=" + usb_device, "bs=4M", "status=progress"])
@@ -74,7 +74,7 @@ with open("/mnt/usb/late_command.sh", "w") as f:
 # Copy the custom Neofetch file and wallpaper to the USB drive
 subprocess.run(["cp", neofetch_file, "/mnt/usb/neofetch.txt"])
 subprocess.run(["cp", wallpaper_file, "/mnt/usb/batarong.png"])
-subprocess.run(["cp", "batarong", "/mnt/usb/batarong"])
+subprocess.run(["cp", "inst-files/batarong", "/mnt/usb/batarong"])
 
 # Unmount the USB drive
 subprocess.run(["umount", "/mnt/usb"])
