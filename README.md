@@ -13,4 +13,4 @@ A project for batarong so he can get the os he deserves.
 
 
 
-In order to install clone the repo and run `python install.py`! Then your done.
+In order to install clone the repo and run `sudo python install.py`! Then your done.
