@@ -11,4 +11,6 @@ A project for batarong so he can get the os he deserves.
 > [!NOTE]
 > i like coding
 
-```curl https://batarong.github.io/install.sh | sudo bash```
+run cubic with the debian kde installer then run this in the virtual env   
+```curl https://batarong.github.io/install.sh | sudo bash```   
+proper instructions coming soon
