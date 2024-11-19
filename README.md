@@ -13,6 +13,6 @@ A project for Batarong so he can get the OS he deserves.
 
 1. Download the KDE Plasma version of Debian.
 2. Rename correctly. 
-3. Run the installer: ```curl https://batarong.github.io/install.sh | sudo bash```  
+3. Run the installer in the Cubic virtual environment: ```curl https://batarong.github.io/install.sh | sudo bash```  
 4. Select the defaults until the end.
 5. You're done.
